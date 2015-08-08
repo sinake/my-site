@@ -63,7 +63,10 @@ table {
 	height: 60px;
 	box-sizing: border-box;
 	border-bottom: 1px #495279 solid;
-	background-color: #565D81;
+	background-color: #697293; 
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .left-nav .active {
