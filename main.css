@@ -70,12 +70,11 @@ table {
 }
 
 .left-nav .active {
-	background-color: #22262e;
+	background-color: rgba(0, 0, 0, 0.2);
 }
 
 .left-nav img {
 	display: block;
-	margin: 0 auto;
 }
 
 .center-wrapper {
@@ -90,6 +89,10 @@ table {
 	border: 1px solid white;
 	float: right;
 	margin: 107px 0 0 0;
+}
+
+section {
+	background-color: rgba(0, 0, 0, 0.2);
 }
 
 .profile {
@@ -126,6 +129,29 @@ table {
 	border: white solid 1px;
 	box-sizing: border-box;
 	margin: 0 0 131px 0;
+}
+
+.section-tab {
+	width: 198px;
+	height: 60px;
+	float:left;
+	position: relative;
+}
+
+.tab-image {
+}
+
+.icon-image {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+}
+
+.tab-heading {
+	position: absolute;
+	top: 15px;
+	left: 90px;
+	font-size: 25px;
 }
 
 .top-link {
