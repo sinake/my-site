@@ -32,7 +32,8 @@ body {
 	background: url("assets/site-background.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
-	color:#c7c8ca;
+	font-family: 'Lato', sans-serif;
+	color:#fff;
 	line-height: 1;
 }
 ol, ul {
@@ -147,10 +148,19 @@ section {
 	left: 10px;
 }
 
-.tab-heading {
+.heading-wrapper {
+	width: 118px;
+	height: 60px;
+	float: left;
 	position: absolute;
-	top: 15px;
-	left: 90px;
+	top: 0px;
+	left: 60px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.tab-heading {
 	font-size: 25px;
 }
 
