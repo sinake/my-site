@@ -57,7 +57,7 @@ table {
 	height: 300px;
 	float:left;
 	box-sizing: border-box;
-	margin: 150px 130px 0 0;
+	margin: 150px 0 0 0;
 }
 
 .left-nav li {
@@ -81,55 +81,54 @@ table {
 .center-wrapper {
 	width: 820px;
 	margin: 0 auto;
+	overflow: hidden;
 }
 
 .social{
 	width: 270px;
 	height: 33px;
-	box-sizing: border-box;
-	border: 1px solid white;
 	float: right;
 	margin: 107px 0 0 0;
 }
 
+.social li {
+	float: right;
+}
+
 section {
 	background-color: rgba(0, 0, 0, 0.2);
+	width: 820px;
+	height: auto;
+	box-sizing: border-box;
 }
 
 .profile {
-	width: 820px;
-	height: 707px;
 	float:left;
-	border: white solid 1px;
-	box-sizing: border-box;
-	margin: 10px 0 53px 0;
+	margin: 10px 0 0 0;
+}
+
+.profile-content {
+	width: 700px;
+	height: auto;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+.name {
+	font-size: 30px;
+	margin: 30px 0 18px 0;
 }
 
 .resume {
-	width: 820px;
-	height: 1074px;
 	float:left;
-	border: white solid 1px;
-	box-sizing: border-box;
-	margin: 0 0 53px 0;
 }
 
 .portfolio {
-	width: 820px;
-	height: 1170px;
 	float:left;
-	border: white solid 1px;
-	box-sizing: border-box;
-	margin: 0 0 53px 0;
 }
 
 .contact {
-	width: 820px;
-	height: 770px;
 	float: left;
-	border: white solid 1px;
-	box-sizing: border-box;
-	margin: 0 0 131px 0;
 }
 
 .section-tab {
@@ -137,9 +136,6 @@ section {
 	height: 60px;
 	float:left;
 	position: relative;
-}
-
-.tab-image {
 }
 
 .icon-image {
@@ -162,6 +158,16 @@ section {
 
 .tab-heading {
 	font-size: 25px;
+}
+
+.triangle {
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 40px 410px 0 410px;
+	border-color: rgba(0, 0, 0, 0.2) transparent;
+	float: left;
+	margin: 0 0 53px 0;
 }
 
 .top-link {
