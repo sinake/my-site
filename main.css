@@ -57,7 +57,7 @@ table {
 	height: 300px;
 	float:left;
 	box-sizing: border-box;
-	margin: 150px 0 0 0;
+	margin: 43px 0 0 0;
 }
 
 .left-nav li {
@@ -80,15 +80,13 @@ table {
 
 .center-wrapper {
 	width: 820px;
-	margin: 0 auto;
-	overflow: hidden;
+	margin: 107px auto 0 auto;
 }
 
 .social{
 	width: 270px;
 	height: 33px;
 	float: right;
-	margin: 107px 0 0 0;
 }
 
 .social li {
@@ -114,9 +112,42 @@ section {
 	overflow: hidden;
 }
 
+.info-wrapper {
+	float:left;
+	width: 270px;
+	margin: 30px 50px 0 0;
+}
+
 .name {
 	font-size: 30px;
-	margin: 30px 0 18px 0;
+	margin: 0 0 18px 0;
+}
+
+.title {
+	font-size: 25px;
+	color: #757b87;
+	margin: 0 0 16px 0;
+}
+
+.circle {
+	border-radius: 50%;
+	width: 140px;
+	height: 140px;
+	background-color: #fff;
+	box-shadow: 0 0 0 10px #000;
+	margin: 0 0 10px 10px;
+}
+
+.about-me-wrapper {
+	float: left;
+	width: 380px;
+	margin: 30px 0 0 0;
+}
+
+.about-me-title {
+	font-size: 30px;
+	margin: 0 0 25px 0;
+
 }
 
 .resume {
