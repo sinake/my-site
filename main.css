@@ -100,6 +100,35 @@ section {
 	box-sizing: border-box;
 }
 
+.section-tab {
+	width: 198px;
+	height: 60px;
+	float:left;
+	position: relative;
+}
+
+.icon-image {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+}
+
+.heading-wrapper {
+	width: 118px;
+	height: 60px;
+	float: left;
+	position: absolute;
+	top: 0px;
+	left: 60px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.tab-heading {
+	font-size: 25px;
+}
+
 .profile {
 	float:left;
 	margin: 10px 0 0 0;
@@ -154,6 +183,192 @@ section {
 	float:left;
 }
 
+.download {
+	float: right;
+	width: 160px;
+	height: 60px;
+	text-align: center;
+	background-color: rgba(255, 255, 255, 0.2);
+}
+
+.download a {
+	display: block;
+	height: 60px;
+}
+
+.download span {
+	display: block;
+	margin: 10px 0 5px 0;
+	font-weight: 100;
+}
+
+.resume-content {
+	width: 644px;
+	height: auto;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+.resume-content h2 {
+	font-size: 25px;
+	margin: 30px 0 20px 0;
+}
+
+.employment-wrapper {
+	float:left;
+	width: 282px;
+	margin: 0 50px 0 0;
+}
+
+.education-wrapper {
+	float:left;
+	width: 282px;
+}
+
+.place {
+	box-sizing: border-box;
+	border-left: 8px solid #fff;
+	position: relative;
+	margin: 0 0 0 6px;
+	padding: 0 0 0 27px;
+}
+
+.resume-circle {
+	border-radius: 50%;
+	width: 20px;
+	height: 20px;
+	background-color: #37bc9b;
+	position: absolute;
+	top: -1px;
+	left: -14px;
+}
+
+.house-icon {
+	display: inline-block;
+	vertical-align: middle;
+	margin: 0 8px 0 0;
+}
+
+.place-name {
+	width: 150px;
+	display: inline-block;
+	font-size: 17px;
+	overflow: hidden;
+	white-space: nowrap;
+	vertical-align: middle;
+	text-overflow: ellipsis;
+}
+
+.date-occurred {
+	font-size: 13px;
+	vertical-align: bottom;
+}
+
+.achievement {
+	margin: 20px 0 0 20px;
+	font-size: 15px;
+}
+
+.experience {
+	margin: 11px 0 0 20px;
+	font-size: 13px;
+	color: #a6abac;
+	padding: 0 0 60px 0;
+}
+
+.place:last-of-type .experience {
+	padding: 0;
+	margin: 11px 0 50px 20px;	
+}
+
+.my-skills-wrapper {
+	width: 644px;
+	margin: 0 auto 43px auto;
+	overflow: hidden;
+	text-align: center;
+}
+
+.my-skills-wrapper h2 {
+	text-align: center;
+	font-size: 25px;
+	margin: 0 0 25px 0;
+}
+
+.skill {
+	float: left;
+	width: 33%;
+}
+
+.skill-logo {
+	width: 30px;
+	height: 32px;
+	border: 1px solid #fff;
+	margin: 0 10px 0 0;
+	display: inline-block;
+	box-sizing: border-box;
+	vertical-align: middle;
+}
+
+.skill-name {
+	font-weight: 100;
+}
+
+.html-circle {
+	width: 67px;
+	height: 67px;
+	box-sizing: border-box;
+	margin: 27px auto 0 auto;
+	border-radius: 50%;
+	position: relative;
+	text-align: center;
+	background-color: #ff5052;
+	background-image: linear-gradient(90deg, #000 50%, transparent 50%), linear-gradient(-90deg, transparent 50%, #000 50%);
+
+}
+
+.css-circle {
+	width: 67px;
+	height: 67px;
+	box-sizing: border-box;
+	margin: 27px auto 0 auto;
+	border-radius: 50%;
+	position: relative;
+	text-align: center;
+	background-color: #3bafda;
+	background-image: linear-gradient(54deg, #000 50%, transparent 50%), linear-gradient(-90deg, transparent 50%, #000 50%);
+
+}
+
+.js-circle {
+	width: 67px;
+	height: 67px;
+	box-sizing: border-box;
+	margin: 27px auto 0 auto;
+	border-radius: 50%;
+	position: relative;
+	text-align: center;
+	background-color: #ffce54;
+	background-image: linear-gradient(43deg, #000 50%, transparent 50%), linear-gradient(-90deg, transparent 50%, #000 50%);
+}
+
+.skill-circle {
+	position: relative;
+    top: 5px;
+    left: 5px;
+    text-align: center;
+    width: 57px;
+    height: 57px;
+    border-radius: 50%;
+    background-color: #505365;
+
+}
+
+.skill-percentage {
+	font-weight: 100;
+	line-height: 57px;
+	font-size: 15px;
+}
+
 .portfolio {
 	float:left;
 }
@@ -162,33 +377,10 @@ section {
 	float: left;
 }
 
-.section-tab {
-	width: 198px;
-	height: 60px;
-	float:left;
-	position: relative;
-}
-
-.icon-image {
-	position: absolute;
-	top: 10px;
-	left: 10px;
-}
-
-.heading-wrapper {
-	width: 118px;
-	height: 60px;
-	float: left;
-	position: absolute;
-	top: 0px;
-	left: 60px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
-.tab-heading {
-	font-size: 25px;
+.contact-content {
+	width: 644px;
+	height: auto;
+	margin: 0 auto;
 }
 
 .triangle {
@@ -199,6 +391,13 @@ section {
 	border-color: rgba(0, 0, 0, 0.2) transparent;
 	float: left;
 	margin: 0 0 53px 0;
+	position: relative;
+}
+
+.section-up-arrow {
+	position: absolute;
+	top: -33px;
+	left: -13px;
 }
 
 .top-link {
