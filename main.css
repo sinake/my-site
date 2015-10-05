@@ -52,22 +52,46 @@ table {
 	border-spacing: 0;
 }
 
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	opacity: .5;
+}
+
+a:visited {
+	color: #fff;
+}
+
+.top-of-page {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
 .left-nav {
 	width: 60px;
 	height: 300px;
 	float:left;
 	box-sizing: border-box;
 	margin: 43px 0 0 0;
+	position: absolute;
 }
 
 .left-nav li {
 	height: 60px;
 	box-sizing: border-box;
 	border-bottom: 1px #495279 solid;
-	background-color: #697293; 
-	display: flex;
-	align-items: center;
-	justify-content: center;
+	background-color: #697293;
+}
+
+.left-nav a {
+	width: 100%;
+	height: 100%;
+	display: -webkit-flex;
+	-webkit-align-items: center;
+	-webkit-justify-content: center;
 }
 
 .left-nav .active {
@@ -78,9 +102,17 @@ table {
 	display: block;
 }
 
+.fixed {
+	position: fixed;
+	top: 0;
+	left: 0;
+	margin: 0;
+}
+
 .center-wrapper {
-	width: 820px;
+	max-width: 820px;
 	margin: 107px auto 0 auto;
+	overflow: hidden;
 }
 
 .social{
@@ -93,9 +125,13 @@ table {
 	float: right;
 }
 
+.social.top {
+	margin: 0 0 10px 0;
+}
+
 section {
 	background-color: rgba(0, 0, 0, 0.2);
-	width: 820px;
+	width: 100%;
 	height: auto;
 	box-sizing: border-box;
 }
@@ -120,18 +156,21 @@ section {
 	position: absolute;
 	top: 0px;
 	left: 60px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	display: -webkit-flex;
+	-webkit-justify-content: center;
+	-webkit-align-items: center;
 }
 
 .tab-heading {
 	font-size: 25px;
 }
 
+.section-down-arrow {
+	display: none;
+}
+
 .profile {
-	float:left;
-	margin: 10px 0 0 0;
+	float: left;
 }
 
 .profile-content {
@@ -198,7 +237,7 @@ section {
 
 .download span {
 	display: block;
-	margin: 10px 0 5px 0;
+	padding: 10px 0 5px 0;
 	font-weight: 100;
 }
 
@@ -216,13 +255,13 @@ section {
 
 .employment-wrapper {
 	float:left;
-	width: 282px;
-	margin: 0 50px 0 0;
+	width: 48%;
+	margin: 0 4% 0 0;
 }
 
 .education-wrapper {
 	float:left;
-	width: 282px;
+	width: 48%;
 }
 
 .place {
@@ -297,6 +336,7 @@ section {
 .skill {
 	float: left;
 	width: 33%;
+	margin: 0 0 20px 0;
 }
 
 .skill-logo {
@@ -350,6 +390,30 @@ section {
 	background-image: linear-gradient(18deg, #000 50%, transparent 50%), linear-gradient(-90deg, transparent 50%, #000 50%);
 }
 
+.jq-circle {
+	width: 67px;
+	height: 67px;
+	box-sizing: border-box;
+	margin: 27px auto 0 auto;
+	border-radius: 50%;
+	position: relative;
+	text-align: center;
+	background-color: #fff;
+	background-image: linear-gradient(36deg, #000 50%, transparent 50%), linear-gradient(-90deg, transparent 50%, #000 50%);
+}
+
+.ps-circle {
+	width: 67px;
+	height: 67px;
+	box-sizing: border-box;
+	margin: 27px auto 0 auto;
+	border-radius: 50%;
+	position: relative;
+	text-align: center;
+	background-color: #ffce54;
+	background-image: linear-gradient(18deg, #000 50%, transparent 50%), linear-gradient(-90deg, transparent 50%, #000 50%);
+}
+
 .skill-circle {
 	position: relative;
     top: 5px;
@@ -377,9 +441,107 @@ section {
 }
 
 .contact-content {
-	width: 644px;
+	width: 700px;
 	height: auto;
 	margin: 0 auto;
+	overflow: hidden;
+}
+
+.contact-map {
+	width: 100%;
+	height: 300px;
+	box-sizing: border-box;
+	border: 1px solid #fff;
+	margin: 32px 0 41px 0;
+	float:left;
+}
+
+.contact-form-wrapper {
+	float: left;
+	width: 400px;
+	height: 273px;
+	box-sizing: border-box;
+	margin: 0 0 32px 0;
+}
+
+input {
+	background: rgba(255, 255, 255, 0);
+	border: none;
+	outline: none;
+	color: #fff;
+	font-size: 16px;
+	color: #fff;
+	font-family: 'Lato', sans-serif;
+	text-transform: uppercase; 
+}
+
+::-webkit-input-placeholder {
+	color: #fff;
+	font-family: 'Lato', sans-serif;
+	text-transform: uppercase; 
+}
+
+.form-field {
+	border: 1px solid #fff;
+	margin: 0 0 10px 0;
+	padding: 0 0 0 10px;
+	box-sizing: border-box;
+	width: 100%;
+}
+
+.email-field {
+	height: 37px;
+	display: -webkit-flex;
+	-webkit-align-items: center;
+	
+}
+
+.subject-field {
+	height: 37px;
+	display: -webkit-flex;
+	-webkit-align-items: center;
+}
+
+textarea {
+	background: rgba(255, 255, 255, 0);
+	border: 1px solid #fff;
+	box-sizing: border-box;
+	outline: none;
+	resize: none;
+	color: #fff;
+	font-size: 16px;
+	font-family: 'Lato', sans-serif;
+	text-transform: uppercase; 
+	margin: 0 0 10px 0;
+	padding: 10px;
+	width: 100%;
+	height: 128px;
+}
+
+.submit-button {
+	height: 37px;
+	display: -webkit-flex;
+	-webkit-align-items: center;
+	-webkit-justify-content: center;
+	width: 80px;
+	padding: 0;
+}
+
+.contact-info {
+	width: 170px;
+	height: 130px;
+	float: right;
+	margin: 0 60px 76px 0;
+	box-sizing: border-box;
+	font-size: 12px;
+}
+
+.contact-info div {
+	margin: 0 0 20px 0;
+}
+
+.contact-info span {
+	margin: 0 0 0 10px;
 }
 
 .triangle {
@@ -393,17 +555,100 @@ section {
 	position: relative;
 }
 
+.side-triangle {
+/*	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 30px 0 30px 16px;
+	border-color: transparent rgba(0, 0, 0, 0.2);
+	float: right;*/
+
+	display: none;
+	width: 0;
+    height: 0;
+    padding-top: 2%;
+    padding-bottom: 5%;
+    padding-left: 2%;
+    overflow: hidden;
+    float: right;
+}
+
+.side-triangle:after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    margin-top: -17px;
+    margin-left: -17px;
+    
+    border-top: 30px solid transparent;
+    border-bottom: 30px solid transparent;
+    border-left: 16px solid rgba(0, 0, 0, 0.2);
+}
+
 .section-up-arrow {
 	position: absolute;
 	top: -33px;
 	left: -13px;
+	display: none;
 }
 
-.top-link {
-	width: 70px;
-	height: 40px;
-	float: right;
-	box-sizing: border-box;
-	border: white solid 1px;
-	margin: 700px 0 0 0;
+@media (max-width: 1024px){
+	
+	.left-nav, .triangle, .profile-content, .resume-content, .profile-content, .contact-content, .download {
+		display: none;
+	}
+
+	.center-wrapper {
+		padding: 0 2%;
+	}
+
+	section {
+		margin: 0 0 10px 0;
+		width: 98%;
+	}
+
+	.side-triangle {
+		display: block;
+	}
+
+	.section-down-arrow {
+		display: block;
+		float: right;
+		margin: 1em 0 1em 0;
+	}
+
+}
+
+@media (max-width: 768px) {
+
+	.side-triangle {
+		padding-bottom: 7%;
+	}
+
+	.side-triangle:after {
+		border-bottom: 30px solid transparent;
+		border-top: 34px solid transparent;
+	}
+
+}
+
+@media (max-width: 414px) {
+
+	section {
+		width: 97%;
+	}
+
+	.side-triangle {
+		padding-bottom: 13%;
+		padding-left: 3%;
+	}
+
+	.side-triangle:after {
+		border-left: 12px solid rgba(0, 0, 0, 0.2);
+		border-bottom: 30px solid transparent;
+		border-top: 30px solid transparent;
+		margin-top: -8px;
+		margin-left: -12px;
+	}
 }
