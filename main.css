@@ -586,10 +586,13 @@ textarea {
     border-left: 16px solid rgba(0, 0, 0, 0.2);
 }
 
+.section-up-link {
+	display: block;
+	margin: 1em auto;
+	width: 26px;
+}
+
 .section-up-arrow {
-	position: absolute;
-	top: -33px;
-	left: -13px;
 	display: none;
 }
 
@@ -608,47 +611,45 @@ textarea {
 		width: 98%;
 	}
 
-	.side-triangle {
-		display: block;
-	}
-
 	.section-down-arrow {
 		display: block;
 		float: right;
-		margin: 1em 0 1em 0;
+		margin: 1em 1em 1em 0;
 	}
 
 }
 
-@media (max-width: 768px) {
-
-	.side-triangle {
-		padding-bottom: 7%;
+@media (max-width: 770px) {
+	.section-content, .contact-map iframe {
+		width: 100%;
 	}
 
-	.side-triangle:after {
-		border-bottom: 30px solid transparent;
-		border-top: 34px solid transparent;
+	.info-wrapper {
+		width: 48%;
+		margin: 30px 2% 0 2%;
 	}
 
+	.about-me-wrapper {
+		width: 48%;
+	}
 }
 
-@media (max-width: 414px) {
+@media (max-width: 480px) {
 
 	section {
 		width: 97%;
 	}
 
-	.side-triangle {
-		padding-bottom: 13%;
-		padding-left: 3%;
+	.info-wrapper, .about-me-wrapper, .employment-wrapper, .education-wrapper, .my-skills-wrapper, .contact-map, .contact-form-wrapper, .bottom {
+		width: 96%;
+		margin: 2em 2% 2em 2%;
 	}
 
-	.side-triangle:after {
-		border-left: 12px solid rgba(0, 0, 0, 0.2);
-		border-bottom: 30px solid transparent;
-		border-top: 30px solid transparent;
-		margin-top: -8px;
-		margin-left: -12px;
+	.circle {
+		margin: 0 auto;
+	}
+
+	.skill {
+		width: 50%;
 	}
 }
