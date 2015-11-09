@@ -54,6 +54,7 @@ table {
 
 a {
 	text-decoration: none;
+	color:#fff;
 }
 
 a:hover {
@@ -204,6 +205,10 @@ section {
 	background-color: #fff;
 	box-shadow: 0 0 0 10px #000;
 	margin: 0 0 10px 10px;
+	overflow: hidden;
+	display: -webkit-flex;
+	-webkit-align-items: center;
+	-webkit-justify-content: center;
 }
 
 .about-me-wrapper {
@@ -216,6 +221,11 @@ section {
 	font-size: 30px;
 	margin: 0 0 25px 0;
 
+}
+
+.about-me-wrapper p{
+	line-height: 20px;
+	margin-bottom: 2em;
 }
 
 .resume {
@@ -313,6 +323,7 @@ section {
 	font-size: 13px;
 	color: #a6abac;
 	padding: 0 0 60px 0;
+	line-height: 1.2em;
 }
 
 .place:last-of-type .experience {
@@ -466,27 +477,26 @@ section {
 
 input {
 	background: rgba(255, 255, 255, 0);
-	border: none;
 	outline: none;
 	color: #fff;
 	font-size: 16px;
-	color: #fff;
 	font-family: 'Lato', sans-serif;
-	text-transform: uppercase; 
-}
-
-::-webkit-input-placeholder {
-	color: #fff;
-	font-family: 'Lato', sans-serif;
-	text-transform: uppercase; 
-}
-
-.form-field {
 	border: 1px solid #fff;
 	margin: 0 0 10px 0;
 	padding: 0 0 0 10px;
 	box-sizing: border-box;
 	width: 100%;
+}
+
+input::-webkit-input-placeholder {
+	color: #fff;
+	font-family: 'Lato', sans-serif;
+	text-transform: uppercase; 
+}
+
+input:focus::-webkit-input-placeholder {
+	opacity: .5;
+	font-style: italic;
 }
 
 .email-field {
@@ -511,20 +521,36 @@ textarea {
 	color: #fff;
 	font-size: 16px;
 	font-family: 'Lato', sans-serif;
-	text-transform: uppercase; 
 	margin: 0 0 10px 0;
 	padding: 10px;
 	width: 100%;
 	height: 128px;
 }
 
+textarea::-webkit-input-placeholder {
+	color: #fff;
+	font-family: 'Lato', sans-serif;
+	text-transform: uppercase; 
+}
+
+textarea:focus::-webkit-input-placeholder {
+	opacity: .5;
+	font-style: italic;
+}
+
 .submit-button {
 	height: 37px;
-	display: -webkit-flex;
-	-webkit-align-items: center;
-	-webkit-justify-content: center;
+	display: inline-block;
 	width: 80px;
 	padding: 0;
+	text-transform: uppercase;
+}
+
+.submit-button:hover {
+	cursor: pointer;
+	box-shadow: inset 0 0 10px #000;
+	opacity: .5;
+	border: 1px solid #000;
 }
 
 .contact-info {
@@ -642,7 +668,7 @@ textarea {
 
 	.info-wrapper, .about-me-wrapper, .employment-wrapper, .education-wrapper, .my-skills-wrapper, .contact-map, .contact-form-wrapper, .bottom {
 		width: 96%;
-		margin: 2em 2% 2em 2%;
+		margin: 1em 2% 1em 2%;
 	}
 
 	.circle {
