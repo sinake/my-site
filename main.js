@@ -31,3 +31,12 @@ $('.section-up-link').click(function(){
 	$(this).siblings('.section-down-link').children().show();
 	$(this).children().hide();
 });
+
+//Submitting form info to php file and showing thank you message once form is filled out.
+$(".contact-form").submit(function() {
+    $.post('main.php', {email: $('.email-field').val(), subject: $('.subject-field').val(), message: $('.message-field').val(), submit: '1'}, function(data) {
+        $(".form-response").html(data).fadeIn('100');
+        $('.email-field, .subject-field, .message-field').val(''); /* Clear the inputs */
+    }, 'text');
+    return false;
+});
