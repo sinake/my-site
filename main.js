@@ -19,7 +19,7 @@ $('a[href*=#]').click(function(event){
 //Clicking a down arrow link will open the related section.
 $('.section-down-link').click(function(){
 	event.preventDefault();
-	$(this).siblings('.section-content').show();
+	$(this).siblings('.section-content').show('slow');
 	$(this).siblings('.section-up-link').children().show();
 	$(this).children().hide();
 });
@@ -27,7 +27,7 @@ $('.section-down-link').click(function(){
 //Clicking the up arrow link will close the related section
 $('.section-up-link').click(function(){
 	event.preventDefault();
-	$(this).siblings('.section-content').hide();
+	$(this).siblings('.section-content').hide('slow');
 	$(this).siblings('.section-down-link').children().show();
 	$(this).children().hide();
 });
