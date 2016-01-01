@@ -20,16 +20,16 @@ $('a[href*=#]').click(function(event){
 $('.section-down-link').click(function(){
 	event.preventDefault();
 	$(this).siblings('.section-content').show('slow');
-	$(this).siblings('.section-up-link').children().show();
-	$(this).children().hide();
+    $(this).siblings('.section-up-link').addClass('active');
+	$(this).addClass('not-active');
 });
 
 //Clicking the up arrow link will close the related section
 $('.section-up-link').click(function(){
 	event.preventDefault();
 	$(this).siblings('.section-content').hide('slow');
-	$(this).siblings('.section-down-link').children().show();
-	$(this).children().hide();
+	$(this).siblings('.section-down-link').removeClass('not-active');
+	$(this).removeClass('active');
 });
 
 //Submitting form info to php file and showing thank you message once form is filled out.

@@ -655,18 +655,14 @@ textarea:focus::-moz-input-placeholder {
 }
 
 .section-up-link {
-	display: block;
+	display: none;
 	margin: 1em auto;
 	width: 26px;
 }
 
-.section-up-arrow {
-	display: none;
-}
-
 @media (max-width: 1024px){
 	
-	.left-nav, .triangle, .profile-content, .resume-content, .profile-content, .contact-content, .download {
+	.left-nav, .triangle, .profile-content, .resume-content, .portfolio-content, .contact-content, .download {
 		display: none;
 	}
 
@@ -679,10 +675,26 @@ textarea:focus::-moz-input-placeholder {
 		width: 98%;
 	}
 
+	.section-down-link {
+		display: block;
+		position: relative;
+		width: 100%;
+		height: 60px;
+
+	}
+
 	.section-down-arrow {
 		display: block;
 		float: right;
 		margin: 1em 1em 1em 0;
+	}
+
+	.active {
+		display: block;
+	}
+
+	.not-active {
+		display: none;
 	}
 
 }
