@@ -1,3 +1,15 @@
+// ****** AngularJS Start *******
+var mySite = angular.module('mySite', ['ngMessages'])
+
+//Controller
+mySite.controller('mainController', ['$scope', function($scope){
+    $scope.contactForm = null;
+    $scope.isDisabled = $('.submit-button').is('[disabled=disabled]');
+
+}])
+
+// ****** End AngularJS *******
+
 //Calling all functions.
 navAtTop();
 smoothScroll();
@@ -22,7 +34,7 @@ function navAtTop(){
 
 //Scrolling the page smoothly when clicking anchor link.
 function smoothScroll(){
-    $('a[href*=#]').click(function(event){     
+    $('a[href*="#"]').click(function(event){     
         event.preventDefault();
         $('html,body').animate({scrollTop: $('[name="' + $.attr(this, 'href').substr(1) + '"]').offset().top}, 500);
     });

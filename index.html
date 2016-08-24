@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html>
+<html ng-app="mySite" ng-controller="mainController">
 	<head>
 		<title>Asif's Website</title>
 		<link rel="stylesheet" type="text/css" href="css/main.css">
@@ -101,10 +101,14 @@
 					<img class="section-down-arrow" src="assets/down-arrow.png">
 				</a>
 				<div class="download">
-					<a href="assets/asif-resume.docx" download>
-						<span>Download Resume</span>
-						<img class="download-arrow" src="assets/down-arrow.png">
+					<span>Download Resume</span>
+					<a href="assets/asif-memon-resume.docx" download>
+						<span>Word</span>
 					</a>
+					<a href="assets/asif-memon-resume.pdf" download>
+						<span>PDF</span>
+					</a>
+					<img class="download-arrow" src="assets/down-arrow.png">
 				</div>
 				<div class="resume-content section-content">
 					<div class="employment-wrapper">
@@ -273,11 +277,34 @@
 						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d50720.15410271317!2d-122.02412094999998!3d37.38960449999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb645a9d05d3b%3A0x768dfb26dd7cc3a2!2sSunnyvale%2C+CA!5e0!3m2!1sen!2sus!4v1440427491776" width="700" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
 					</div>
 					<div class="contact-form-wrapper">
-						<form class="contact-form" action="main.php" method="post">
-							<input class="email-field form-field" type="text" name="email" placeholder="Email">
-							<input class="subject-field form-field" type="text" name="subject" placeholder="Subject">
-							<textarea class="message-field" type="text" name="message" placeholder="Message"></textarea>
-							<input class="submit-button form-field" type="submit" name="submit" value="Send">
+						<form class="contact-form" action="main.php" method="post" name="contactForm" novalidate>
+						
+							<input class="email-field form-field" type="email" name="email" placeholder="Email" ng-model="email" minlength="3" required>
+							
+							<div class="error-messages" ng-messages="contactForm.email.$error" ng-show="contactForm.email.$touched">
+								<p ng-message="minlength">Email is too short</p>
+								<p ng-message="required">Email is required</p>
+								<p ng-message="email">Please enter valid email.</p>
+							</div>
+							
+							<input class="subject-field form-field" type="text" name="subject" placeholder="Subject" ng-model="text" required>
+
+							<div class="error-messages" ng-messages="contactForm.subject.$error" ng-show="contactForm.subject.$touched">
+								<p ng-message="required">Please enter a subject</p>
+							</div>
+							
+							<textarea class="message-field" type="text" name="message" placeholder="Message" ng-model="textarea" required></textarea>
+							
+							<div class="error-messages" ng-messages="contactForm.message.$error" ng-show="contactForm.message.$touched">
+								<p ng-message="required">Message is required</p>
+							</div>
+
+							<button class="submit-button form-field" type="submit" name="submit" ng-class="{ 'hvr-buzz-out' : contactForm.email.$invalid || contactForm.subject.$invalid || contactForm.message.$invalid }" ng-disabled="contactForm.email.$invalid || contactForm.subject.$invalid || contactForm.message.$invalid">Send</button>
+
+							<div class="error-messages" ng-messages="contactForm.submit.$error" ng-show="contactForm.$submitted">
+								<p ng-message="required">Please fill out the fields above.</p>
+							</div>
+						
 						</form>
 						<div class="form-response"></div>
 					</div>
@@ -309,9 +336,11 @@
 			</div>
 
 		</div>
-	
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-	<script src="js/jquery.colorbox-min.js"></script>
-	<script src="js/main.js"></script>
+		
+		<script src="js/angular-1.5.5.min.js"></script>
+		<script src="js/angular-messages-1.5.5.min.js"></script>
+		<script src="js/jquery-2.2.4.min.js"></script>
+		<script src="js/jquery.colorbox-min.js"></script>
+		<script src="js/main.js"></script>
 	</body>
 </html>

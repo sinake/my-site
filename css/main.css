@@ -264,20 +264,24 @@ section {
 .download {
 	float: right;
 	width: 160px;
-	height: 60px;
+	height: auto;
 	text-align: center;
 	background-color: rgba(255, 255, 255, 0.2);
 }
 
-.download a {
-	display: block;
-	height: 60px;
+.download span {
+	display: inline-block;
+	margin: 10px 0;
 }
 
-.download span {
-	display: block;
-	padding: 10px 0 5px 0;
+.download a span{
 	font-weight: 100;
+	margin: 0px 15px 0px 10px;
+}
+
+.download-arrow {
+	display: block;
+	margin: 5px auto;
 }
 
 .resume-content h2 {
@@ -528,7 +532,6 @@ section {
 .contact-form-wrapper {
 	float: left;
 	width: 400px;
-	height: 273px;
 	box-sizing: border-box;
 	margin: 0 0 32px 0;
 }
@@ -571,6 +574,11 @@ input:focus::-webkit-input-placeholder {
 .email-field {
 	height: 37px;
 	
+}
+
+.error-messages{
+	color: #ff0000;
+	margin-bottom: 10px;
 }
 
 .subject-field {
@@ -620,13 +628,149 @@ textarea:focus::-moz-input-placeholder {
 	width: 80px;
 	padding: 0;
 	text-transform: uppercase;
+	font-family: inherit;
+	font-size: inherit;
+	color: inherit;
+	cursor: pointer;
 }
 
-.submit-button:hover {
-	cursor: pointer;
-	box-shadow: inset 0 0 10px #000;
-	opacity: .5;
-	border: 1px solid #000;
+.submit-button:not([disabled]) {
+	border: 1px solid #fff;
+	background: none;
+}
+
+
+
+/* Buzz Out */
+@-webkit-keyframes hvr-buzz-out {
+  10% {
+    -webkit-transform: translateX(3px) rotate(2deg);
+    transform: translateX(3px) rotate(2deg);
+  }
+
+  20% {
+    -webkit-transform: translateX(-3px) rotate(-2deg);
+    transform: translateX(-3px) rotate(-2deg);
+  }
+
+  30% {
+    -webkit-transform: translateX(3px) rotate(2deg);
+    transform: translateX(3px) rotate(2deg);
+  }
+
+  40% {
+    -webkit-transform: translateX(-3px) rotate(-2deg);
+    transform: translateX(-3px) rotate(-2deg);
+  }
+
+  50% {
+    -webkit-transform: translateX(2px) rotate(1deg);
+    transform: translateX(2px) rotate(1deg);
+  }
+
+  60% {
+    -webkit-transform: translateX(-2px) rotate(-1deg);
+    transform: translateX(-2px) rotate(-1deg);
+  }
+
+  70% {
+    -webkit-transform: translateX(2px) rotate(1deg);
+    transform: translateX(2px) rotate(1deg);
+  }
+
+  80% {
+    -webkit-transform: translateX(-2px) rotate(-1deg);
+    transform: translateX(-2px) rotate(-1deg);
+  }
+
+  90% {
+    -webkit-transform: translateX(1px) rotate(0);
+    transform: translateX(1px) rotate(0);
+  }
+
+  100% {
+    -webkit-transform: translateX(-1px) rotate(0);
+    transform: translateX(-1px) rotate(0);
+  }
+}
+
+@keyframes hvr-buzz-out {
+  10% {
+    -webkit-transform: translateX(3px) rotate(2deg);
+    transform: translateX(3px) rotate(2deg);
+  }
+
+  20% {
+    -webkit-transform: translateX(-3px) rotate(-2deg);
+    transform: translateX(-3px) rotate(-2deg);
+  }
+
+  30% {
+    -webkit-transform: translateX(3px) rotate(2deg);
+    transform: translateX(3px) rotate(2deg);
+  }
+
+  40% {
+    -webkit-transform: translateX(-3px) rotate(-2deg);
+    transform: translateX(-3px) rotate(-2deg);
+  }
+
+  50% {
+    -webkit-transform: translateX(2px) rotate(1deg);
+    transform: translateX(2px) rotate(1deg);
+  }
+
+  60% {
+    -webkit-transform: translateX(-2px) rotate(-1deg);
+    transform: translateX(-2px) rotate(-1deg);
+  }
+
+  70% {
+    -webkit-transform: translateX(2px) rotate(1deg);
+    transform: translateX(2px) rotate(1deg);
+  }
+
+  80% {
+    -webkit-transform: translateX(-2px) rotate(-1deg);
+    transform: translateX(-2px) rotate(-1deg);
+  }
+
+  90% {
+    -webkit-transform: translateX(1px) rotate(0);
+    transform: translateX(1px) rotate(0);
+  }
+
+  100% {
+    -webkit-transform: translateX(-1px) rotate(0);
+    transform: translateX(-1px) rotate(0);
+  }
+}
+
+.hvr-buzz-out {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+}
+.hvr-buzz-out:hover, .hvr-buzz-out:focus, .hvr-buzz-out:active {
+  -webkit-animation-name: hvr-buzz-out;
+  animation-name: hvr-buzz-out;
+  -webkit-animation-duration: 0.75s;
+  animation-duration: 0.75s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+}
+
+
+
+.form-response {
+	padding-top: 20px;
 }
 
 .contact-info {
