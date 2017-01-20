@@ -1,15 +1,3 @@
-// ****** AngularJS Start *******
-var mySite = angular.module('mySite', ['ngMessages'])
-
-//Controller
-mySite.controller('mainController', ['$scope', function($scope){
-    $scope.contactForm = null;
-    $scope.isDisabled = $('.submit-button').is('[disabled=disabled]');
-
-}])
-
-// ****** End AngularJS *******
-
 //Calling all functions.
 navAtTop();
 smoothScroll();
@@ -17,7 +5,7 @@ openSection();
 closeSection()
 showProjectTitleAndMag();
 openProjectPreview();
-formSubmit();
+formValidation();
 
 //Keeping nav menu at the top of the scroll window
 function navAtTop(){
@@ -87,13 +75,42 @@ function openProjectPreview(){
     })
 }
 
-//Submitting form info to php file and showing thank you message once form is filled out.
-function formSubmit(){
-    $(".contact-form").submit(function() {
-        $.post('main.php', {email: $('.email-field').val(), subject: $('.subject-field').val(), message: $('.message-field').val(), submit: '1'}, function(data) {
-            $(".form-response").html(data).fadeIn('100');
-            $('.email-field, .subject-field, .message-field').val(''); /* Clear the inputs */
-        }, 'text');
-        return false;
-    });
+//Removing recaptcha error message.
+function recaptchaCallback() {
+    $('.hidden-recaptcha').valid();
+}
+
+//Validate form
+function formValidation() {
+
+    //validating the form function
+    $(".contact-form").validate({
+        ignore: ".ignore",
+        debug: true,
+        rules: {
+            hiddenRecaptcha: {
+                required: function () {
+                    if (grecaptcha.getResponse() == '') {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                }
+            }
+        },
+        submitHandler: function(form) {
+            //Submitting form info to php file and showing thank you message once form is filled out.
+            $.post('main.php', {
+                email: $('.email-field').val(), 
+                subject: $('.subject-field').val(), 
+                message: $('.message-field').val(), 
+                submit: '1'
+            }, function(data) {
+                $(".form-response").show('slow');
+                $(".form-response").delay(4000).hide('slow');
+                $('.contact-form')[0].reset(); /* Clear the inputs */
+                grecaptcha.reset() //reset captcha after every message.
+            });
+        }
+    })
 }

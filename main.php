@@ -1,9 +1,9 @@
 <?php 
   
   //Turning on error reporting
-  //error_reporting(-1);
-  //ini_set('display_errors', 'On');
-  //set_error_handler("var_dump");
+  // error_reporting(-1);
+  // ini_set('display_errors', 'On');
+  // set_error_handler("var_dump");
   
   if(isset($_POST['submit'])) {
 
@@ -17,9 +17,6 @@
 
     //send email
     mail($admin_email, $subject, $message, $headers);
-    
-    //Email response
-    echo "Thank you for contacting us!";
 
   } 
 
