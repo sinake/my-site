@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html ng-app="mySite" ng-controller="mainController">
+<html>
 	<head>
 		<title>Asif's Website</title>
 		<link rel="stylesheet" type="text/css" href="css/main.css">
@@ -250,6 +250,14 @@
 							</a>
 							<p class="project-description"></p>
 						</div>
+<!-- 						<div class="project">
+							<span class="project-title">Ice Age Shop</span>
+							<img class="magnifying-icon" src="assets/magnifying-glass.png">
+							<a class="project-image-link" title="This project was to update the look and feel for the official Ice Age shop on CafePress.com. Made changes to layout using HTML, CSS, and Javascript. Also added a carousel which highlighted various products and promotions." href="assets/cp-ice-age-shop.jpg">
+								<img class="project-image" src="assets/cp-ice-age-shop.jpg">
+							</a>
+							<p class="project-description"></p>
+						</div> -->
 					</div>
 					<div class="portfolio-pagination"></div>
 				</div>			
@@ -279,34 +287,40 @@
 					<div class="contact-form-wrapper">
 						<form class="contact-form" action="main.php" method="post" name="contactForm" novalidate>
 						
-							<input class="email-field form-field" type="email" name="email" placeholder="Email" ng-model="email" minlength="3" required>
+							<input class="email-field form-field" 
+							type="email" 
+							name="email" 
+							placeholder="Email"
+							data-msg-required="Email is required"
+							required>
 							
-							<div class="error-messages" ng-messages="contactForm.email.$error" ng-show="contactForm.email.$touched">
-								<p ng-message="minlength">Email is too short</p>
-								<p ng-message="required">Email is required</p>
-								<p ng-message="email">Please enter valid email.</p>
-							</div>
+							<input class="subject-field form-field" 
+							type="text" 
+							name="subject" 
+							placeholder="Subject" 
+							data-msg-required="Subject is required"
+							required>
 							
-							<input class="subject-field form-field" type="text" name="subject" placeholder="Subject" ng-model="text" required>
+							<textarea class="message-field" 
+							type="text" 
+							name="message" 
+							placeholder="Message"
+							data-msg-required="Message is required" 
+							required></textarea>
 
-							<div class="error-messages" ng-messages="contactForm.subject.$error" ng-show="contactForm.subject.$touched">
-								<p ng-message="required">Please enter a subject</p>
-							</div>
+							<div class="g-recaptcha" data-sitekey="6LfkIBEUAAAAAO_o_xNnnVURVYJ6wQSAtSlfwk3Z" data-callback="recaptchaCallback"></div>
 							
-							<textarea class="message-field" type="text" name="message" placeholder="Message" ng-model="textarea" required></textarea>
-							
-							<div class="error-messages" ng-messages="contactForm.message.$error" ng-show="contactForm.message.$touched">
-								<p ng-message="required">Message is required</p>
-							</div>
+							<input class="hidden-recaptcha"
+							type="hidden"
+							name="hiddenRecaptcha"
+							data-msg-required="Recaptcha is required"
+							required>
 
-							<button class="submit-button form-field" type="submit" name="submit" ng-class="{ 'hvr-buzz-out' : contactForm.email.$invalid || contactForm.subject.$invalid || contactForm.message.$invalid }" ng-disabled="contactForm.email.$invalid || contactForm.subject.$invalid || contactForm.message.$invalid">Send</button>
 
-							<div class="error-messages" ng-messages="contactForm.submit.$error" ng-show="contactForm.$submitted">
-								<p ng-message="required">Please fill out the fields above.</p>
-							</div>
+							<button class="submit-button form-field" type="submit" name="submit">Send</button>
 						
 						</form>
-						<div class="form-response"></div>
+						<div class="form-response">Thank you for contacting us.</div>
 					</div>
 					<div class="contact-info">
 						<div class="city">
@@ -337,10 +351,10 @@
 
 		</div>
 		
-		<script src="js/angular-1.5.5.min.js"></script>
-		<script src="js/angular-messages-1.5.5.min.js"></script>
 		<script src="js/jquery-2.2.4.min.js"></script>
+		<script src="js/jquery.validate.min.js"></script>
 		<script src="js/jquery.colorbox-min.js"></script>
+		<script src="https://www.google.com/recaptcha/api.js?" async defer></script>
 		<script src="js/main.js"></script>
 	</body>
 </html>
