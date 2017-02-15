@@ -5,6 +5,7 @@ openSection();
 closeSection()
 showProjectTitleAndMag();
 openProjectPreview();
+// formSubmission();
 formValidation();
 
 //Keeping nav menu at the top of the scroll window
@@ -86,7 +87,6 @@ function formValidation() {
     //validating the form function
     $(".contact-form").validate({
         ignore: ".ignore",
-        debug: true,
         rules: {
             hiddenRecaptcha: {
                 required: function () {
@@ -100,17 +100,24 @@ function formValidation() {
         },
         submitHandler: function(form) {
             //Submitting form info to php file and showing thank you message once form is filled out.
+
             $.post('main.php', {
-                email: $('.email-field').val(), 
-                subject: $('.subject-field').val(), 
-                message: $('.message-field').val(), 
-                submit: '1'
+                email:      $('.email-field').val(), 
+                subject:    $('.subject-field').val(), 
+                message:    $('.message-field').val(),
+                recaptcha:  $('.g-recaptcha-response').val(),
+                submit:     '1'
             }, function(data) {
-                $(".form-response").show('slow');
-                $(".form-response").delay(4000).hide('slow');
-                $('.contact-form')[0].reset(); /* Clear the inputs */
+                //this helps in debugging php. The data argument is echo'd into the form-response div. Turn on if needed.
+                // $(".form-response").html(data);
+                
+                $(".form-response").show('slow'); //Show the thank you message
+                $(".form-response").delay(4000).hide('slow'); //Hide the thank you message after 4 secs.
+                $('.contact-form')[0].reset(); // Clear the inputs
                 grecaptcha.reset() //reset captcha after every message.
             });
+            // return false to prevent normal browser submit and page navigation
+            return false;
         }
     })
 }
